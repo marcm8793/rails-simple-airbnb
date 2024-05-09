@@ -1,0 +1,13 @@
+<h1>Search Results</h1>
+<% if @flats.empty? %>
+  <p>No results found for your query.</p>
+<% else %>
+  <ul class="list-unstyled">
+    <% @flats.each do |flat| %>
+      <li>
+        <h2><%= flat.name %></h2>
+        <p><%= flat.description %></p>
+      </li>
+    <% end %>
+  </ul>
+<% end %>

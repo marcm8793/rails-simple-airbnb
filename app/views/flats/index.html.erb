@@ -4,14 +4,19 @@
       <h1>All our Flats</h1>
     </div>
   </div>
+
   <div class="row">
     <div class="col">
-      <p>All 213 flats.</p>
+      <p>All <%= @flats.count %> flats</p>
     </div>
   </div class="row">
 
   <div class="row">
-    <% @flats.each do |flat| %>
-      <div class="col-md-4"><%= flat.name %></div>
-    <% end %>
+  <% @flats.each do |flat| %>
+    <div class="col-md-4">
+      <%= render "flatcard", flat: flat %>
+    </div>
+  <% end %>
+  </div>
+
 </div>
