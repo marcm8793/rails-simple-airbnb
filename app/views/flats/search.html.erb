@@ -1,4 +1,5 @@
-<h1>Search Results</h1>
+<div class="container mt-3">
+  <h1>Search Results</h1>
 <% if @flats.empty? %>
   <p>No results found for your query.</p>
 <% else %>
@@ -10,4 +11,19 @@
       </li>
     <% end %>
   </ul>
+
+  <div class="row">
+    <div class="col">
+      <p>All <%= @flats.count %> flats</p>
+    </div>
+  </div class="row">
+
+  <div class="row">
+  <% @flats.each do |flat| %>
+    <div class="col-md-4">
+      <%= render "flatcard", flat: flat %>
+    </div>
+  <% end %>
+  </div>
 <% end %>
+</div>

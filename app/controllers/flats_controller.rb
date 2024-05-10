@@ -35,9 +35,9 @@ class FlatsController < ApplicationController
 
   def search
     @flats = if params[:query].present?
-               Flat.where("name LIKE ?", "%#{params[:query]}%")  # Adjust this according to your search criteria
+               Flat.where("name LIKE ?", "%#{params[:query]}%")
              else
-               Flat.all  # or whatever default listing you want
+               Flat.all
              end
   end
 

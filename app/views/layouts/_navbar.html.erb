@@ -3,20 +3,15 @@
     <%= link_to "Simple Airbnb", flats_path, :class=>"navbar-brand" %>
     <div class="collapse navbar-collapse">
       <div class="ms-auto d-flex">
-        <form class="d-flex my-2 my-lg-0">
-          <input type="search" class="form-control me-2" placeholder="Search">
-          <%= link_to "Search", "#", :class=>"btn btn-outline-success my-2 my-sm-0", :onclick=>"search()" %>
-        </form>
 
-        <%= form_with url: search_flats_path, method: :get, local: true, class: "form-inline" do |form| %>
-  <div class="form-group mb-2">
-    <%= form.label :query, "Search Flats:", class: "sr-only" %>
-    <%= form.text_field :query, placeholder: "Enter search term", class: "form-control me-2" %>
-  </div>
-  <%= form.submit "Search", class: "btn btn-outline-success mb-2" %>
-<% end %>
+        <%= form_with url: search_flats_path, method: :get, local: true, class: "d-flex my-2 my-lg-0" do |form| %>
+          <%= form.label :query, "Search Flats:", class: "sr-only" %>
+          <%= form.text_field :query, placeholder: "Search", class: "form-control me-2" %>
+          <%= form.submit "Search", class: "btn btn-outline-success my-2 my-sm-0" %>
+        <% end %>
 
         <%= link_to "Add Flat", new_flat_path, :class=>"btn btn-outline-primary my-2 my-sm-0 ms-2" %>
+
       </div>
     </div>
   </div>
